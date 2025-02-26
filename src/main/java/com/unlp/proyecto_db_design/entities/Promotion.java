@@ -14,6 +14,7 @@ import java.util.List;
 )
 @Data
 public class Promotion {
+    @Id
     private Integer id;
     private String code;
     private String promotionTitle;

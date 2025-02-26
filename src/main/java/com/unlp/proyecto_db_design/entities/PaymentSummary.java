@@ -1,9 +1,6 @@
 package com.unlp.proyecto_db_design.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.sql.Date;
@@ -12,6 +9,7 @@ import java.util.List;
 @Entity
 @Data
 public class PaymentSummary {
+    @Id
     private Integer id;
     private String code;
     private String month;

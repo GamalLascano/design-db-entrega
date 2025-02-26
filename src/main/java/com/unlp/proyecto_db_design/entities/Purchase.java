@@ -11,6 +11,8 @@ import lombok.Data;
 )
 @Data
 public class Purchase {
+    @Id
+    private Integer id;
     private String paymentVoucher;
     private String store;
     private String cuitStore;
