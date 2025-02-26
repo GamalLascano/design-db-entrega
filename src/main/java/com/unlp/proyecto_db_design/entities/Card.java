@@ -1,15 +1,16 @@
 package com.unlp.proyecto_db_design.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.sql.Date;
+import java.util.Set;
 
 @Entity
 @Data
 public class Card {
+    @Id
+    private Integer id;
     private String number;
     private String ccv;
     private String cardholderNameInCard;
@@ -21,4 +22,6 @@ public class Card {
     @OneToOne
     @JoinColumn(name = "bank_id", referencedColumnName = "id")
     private Bank bank;
+    @OneToMany(mappedBy="card")
+    private Set<Purchase> purchases;
 }

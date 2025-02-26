@@ -3,6 +3,7 @@ package com.unlp.proyecto_db_design.entities;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -16,5 +17,7 @@ public class Bank {
     private String address;
     private String telephone;
     @ManyToMany(mappedBy = "banks")
-    private Set<Customer> customers;
+    private Set<Customer> members;
+    @OneToMany
+    private List<Promotion> promotions;
 }
