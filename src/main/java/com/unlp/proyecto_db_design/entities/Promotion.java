@@ -1,13 +1,17 @@
 package com.unlp.proyecto_db_design.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.sql.Date;
 import java.util.List;
 
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(
+        name = "promotion_type",
+        discriminatorType = DiscriminatorType.STRING
+)
 @Data
 public class Promotion {
     private Integer id;

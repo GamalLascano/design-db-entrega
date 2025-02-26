@@ -1,11 +1,14 @@
 package com.unlp.proyecto_db_design.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(
+        name = "purchase_type",
+        discriminatorType = DiscriminatorType.STRING
+)
 @Data
 public class Purchase {
     private String paymentVoucher;
